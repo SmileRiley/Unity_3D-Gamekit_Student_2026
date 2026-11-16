@@ -111,8 +111,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7257097, y: 1.2487214, z: 0.7251618}
+  m_Center: {x: -0.0013294818, y: 0.52872646, z: -0.009913117}
 --- !u!114 &3473392928936825124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +125,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6353a4f0ca84d474bb703e601b0d3d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
+  hitPoints: 1
+  OnResetDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114284466596212242, guid: 2d2745d2a8668e644a921a4848c9bc90,
+          type: 3}
+        m_TargetAssemblyTypeName: Gamekit3D.HealthUI, Assembly-CSharp
+        m_MethodName: ChangeHitPointUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 114011089888769184, guid: 9d620787554a948e3876fe7dbdba24e8,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: Gamekit3D.Damageable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
