@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public enum ElementalPower
 {
@@ -24,17 +26,45 @@ public struct CharacterInformation
 public class WS4 : MonoBehaviour
 {
   public ElementalPower elementKraft;
-  public CharacterInformation characterInformation;
+  public CharacterInformation[] characterInformation;
 
+  public EventReference eventRef;
+  private EventInstance eventInstance;
+  
   public int[] highScores;
   
   private void Start()
   {
-    Debug.Log(elementKraft);
+    eventInstance = RuntimeManager.CreateInstance(eventRef);
+    eventInstance.start();
     
-    Debug.Log(characterInformation);
+    eventInstance.getPlaybackState(out PLAYBACK_STATE state);
+    Debug.Log(state);
     
-    Debug.Log(highScores[2]);
+    foreach (CharacterInformation score in characterInformation)
+    {
+      Debug.Log(score.name);
+    }
+
+    foreach (CharacterInformation score in characterInformation)
+    {
+      switch (score.name)
+      {
+        case "Link":
+          Debug.Log("TRIFORCE!");
+          break;
+        case "Mario":
+          Debug.Log("WAAAHOOO!");
+          break;
+        case "Samus":
+          Debug.Log("METROID!");
+          break;
+        default:
+          Debug.Log("Something Wong...");
+          break;
+      }
+    }
+ 
   }
 
   private void OnTriggerEnter(Collider other)
