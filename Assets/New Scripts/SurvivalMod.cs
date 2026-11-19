@@ -37,4 +37,9 @@ public class SurvivalMod : MonoBehaviour
         };
         damageable.ApplyDamage(hunger);
     }
+
+    public void ResetTimer()
+    {
+        timer = 0f;
+    }
 }
