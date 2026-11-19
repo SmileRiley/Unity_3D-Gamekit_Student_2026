@@ -23,6 +23,6 @@ namespace New_Scripts
             {
                 audioManager.PlayMusic();
             }
-        }
+        }   
     }
 }

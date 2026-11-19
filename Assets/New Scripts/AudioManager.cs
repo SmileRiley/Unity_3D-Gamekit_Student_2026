@@ -13,6 +13,7 @@ public enum MusicEventType
 [System.Serializable]
 public struct MusicData
 {
+    [SerializeField]
     public MusicEventType musicType;
     public EventReference eventReference;
 }
@@ -29,11 +30,7 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     { 
-        eventInstance = RuntimeManager.CreateInstance(eventReference);
-        eventInstance.start();
-        
-        eventInstance.getPlaybackState(out PLAYBACK_STATE state);
-        Debug.Log(state);
+     
     }
 
     // Update is called once per frame
@@ -44,6 +41,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic()
     {
+        eventInstance = RuntimeManager.CreateInstance(eventReference);
         eventInstance.start();
         Debug.Log("Playing music");
     }
